@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="727.0" prefWidth="979.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.beempz.tf.controller.CustomerFormController">
+   <children>
+      <TableView fx:id="tblSupplier" layoutX="66.0" layoutY="177.0" onMouseClicked="#tbl_Clicked" prefHeight="420.0" prefWidth="847.0">
+        <columns>
+          <TableColumn prefWidth="115.0" text="Supplier ID" />
+          <TableColumn prefWidth="195.0" text="Supplier Name" />
+            <TableColumn prefWidth="145.0" text="Route" />
+            <TableColumn prefWidth="188.0" text="Contact No" />
+            <TableColumn prefWidth="193.0" text="Address" />
+        </columns>
+      </TableView>
+      <Label layoutX="73.0" layoutY="135.0" prefHeight="25.0" prefWidth="897.0" text="Note :- If you need to update a supplier detail, just click on the table , update and just press Add button">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="78.0" prefHeight="43.0" prefWidth="282.0" text="Supplier Details">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnDelete" defaultButton="true" layoutX="731.0" layoutY="623.0" onAction="#btnDelete_OnAction" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: red;" text="Delete" textFill="#f5f2f2" />
+      <JFXButton fx:id="btnRefresh" layoutX="596.0" layoutY="623.0" onAction="#btnRefresh_OnAction" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: yellow;" text="Refresh Table" />
+   </children>
+</AnchorPane>

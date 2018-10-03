@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-06-29T15:00:53 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fde28a3f-31bf-4bd1-a9dd-5f21d38a7add">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="teafact"/>
+	<parameter name="supid" class="java.lang.Integer"/>
+	<parameter name="fromdate" class="java.util.Date"/>
+	<parameter name="todate" class="java.util.Date"/>
+	<queryString language="SQL">
+		<![CDATA[select c.creditid,c.date,c.supplierid,s.name,ct.type_name,c.amount
+from credit c , supplier s, credit_type ct
+where c.supplierid = s.supplierno and ct.typeid = c.credit_type and c.supplierid = $P{supid} and c.date between $P{fromdate} and $P{todate}
+]]>
+	</queryString>
+	<field name="creditid" class="java.lang.Integer"/>
+	<field name="date" class="java.sql.Date"/>
+	<field name="supplierid" class="java.lang.Integer"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="type_name" class="java.lang.String"/>
+	<field name="amount" class="java.math.BigDecimal"/>
+	<variable name="total" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="220" y="30" width="145" height="30" uuid="6cee9c40-de36-4fc5-8530-90b304ce1687"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Credit Details"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="150" height="26" uuid="17aeee86-33d1-4378-aca0-131c957d0327"/>
+				<textFieldExpression><![CDATA["Supplier ID : "+$F{supplierid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="30" width="148" height="30" uuid="fce41e73-2559-4858-b5b6-a7e78eeee9c6"/>
+				<textFieldExpression><![CDATA["Supplier Name : "+$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="-2" width="141" height="30" uuid="125ef5e3-90ad-4fad-92ea-f6632dbabbcb"/>
+				<textFieldExpression><![CDATA["From : "+$P{fromdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="30" width="139" height="30" uuid="8716ed01-dfbb-4962-b0c1-d8f878710c7b"/>
+				<textFieldExpression><![CDATA["To : "+$P{todate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="30" uuid="1b8ff7bb-13b8-42c7-a2f0-b8a45767f7ae"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[Credit ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="138" height="30" uuid="4ecae620-f784-46df-ac99-fd5332c7ed80"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="138" height="30" uuid="0b71a3ba-363d-4236-9391-e496e6a3c34b"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[Credit Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="30" uuid="d918ede7-ba97-411b-955d-6fbb938a3d73"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="141" height="30" uuid="c9bd6a46-aab6-48e8-9577-9a35b07048db"/>
+				<textFieldExpression><![CDATA[$F{creditid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="138" height="30" uuid="e3c9ad55-f201-4389-a42a-3145a5feb9f1"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="30" uuid="a9139f8f-d1c2-4f50-816e-481ebe6e1b70"/>
+				<textFieldExpression><![CDATA[$F{type_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="30" uuid="8dfcaf92-a0bc-4f2c-9c2a-cc0196095679"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="9" width="100" height="30" uuid="9096a7e7-1c3e-4693-98e8-a2934227af63"/>
+				<textFieldExpression><![CDATA["Total Credits : "+$V{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

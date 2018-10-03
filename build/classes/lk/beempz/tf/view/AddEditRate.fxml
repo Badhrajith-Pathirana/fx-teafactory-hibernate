@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="663.0" prefWidth="588.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="lk.beempz.tf.controller.AddEditRateController">
+   <children>
+      <JFXDatePicker fx:id="dpDate" layoutX="133.0" layoutY="105.0" prefHeight="28.0" prefWidth="323.0" promptText="Month" />
+      <JFXTextField fx:id="txtAkg" layoutX="133.0" layoutY="170.0" prefHeight="25.0" prefWidth="323.0" promptText="Price of A type tea (Kg)" />
+      <JFXTextField fx:id="txtBKg" layoutX="133.0" layoutY="254.0" prefHeight="25.0" prefWidth="323.0" promptText="Price of B type tea (Kg)" />
+      <JFXTextField fx:id="txtTravel" layoutX="133.0" layoutY="341.0" prefHeight="25.0" prefWidth="323.0" promptText="Travelling fee(Per Kg)" />
+      <JFXButton layoutX="229.0" layoutY="459.0" onAction="#btnAdd_OnAction" prefHeight="58.0" prefWidth="130.0" style="-fx-background-color: lightgreen;" text="Add" />
+   </children>
+</AnchorPane>

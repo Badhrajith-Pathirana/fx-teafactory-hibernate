@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="734.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.beempz.tf.controller.SupplierAccountsController">
+   <children>
+      <Label layoutX="46.0" layoutY="26.0" prefHeight="35.0" prefWidth="253.0" text="Supplier Accounts">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Pane layoutX="59.0" layoutY="76.0" prefHeight="160.0" prefWidth="332.0">
+         <children>
+            <JFXDatePicker fx:id="dateFrom" layoutX="14.0" layoutY="48.0" promptText="From" />
+            <JFXDatePicker fx:id="dateTo" layoutX="14.0" layoutY="102.0" promptText="To" />
+            <JFXButton fx:id="btnShow" layoutX="208.0" layoutY="99.0" onAction="#btn_Show_OnClick" prefHeight="35.0" prefWidth="81.0" style="-fx-background-color: yellow;" text="Show" />
+            <Label layoutX="8.0" layoutY="6.0" text="Show details from following period">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="660.0" layoutY="62.0" text="Total amount for this period">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" alignment="CENTER" layoutX="731.0" layoutY="117.0" prefHeight="25.0" prefWidth="109.0" text="0.00">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblTransaction" layoutX="59.0" layoutY="287.0" onMouseClicked="#tblClicked" prefHeight="356.0" prefWidth="790.0">
+        <columns>
+          <TableColumn prefWidth="92.0" text="Date" />
+          <TableColumn prefWidth="133.0" text="Supplier No" />
+            <TableColumn prefWidth="217.0" text="Name" />
+            <TableColumn prefWidth="177.0" text="Description" />
+            <TableColumn prefWidth="166.0" text="Amount" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="640.0" layoutY="658.0" onAction="#btnClickhere_OnAction" prefHeight="49.0" prefWidth="209.0" style="-fx-background-color: cyan;" text="Click here to see today transactions" />
+   </children>
+</AnchorPane>

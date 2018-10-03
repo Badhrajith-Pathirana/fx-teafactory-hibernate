@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="440.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.beempz.tf.controller.LoginFormController">
+   <children>
+      <JFXTextField fx:id="txtUsername" alignment="CENTER" layoutX="138.0" layoutY="147.0" prefHeight="32.0" prefWidth="365.0" promptText="Username">
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="138.0" layoutY="208.0" onKeyPressed="#passwordOnPressed" prefHeight="25.0" prefWidth="365.0" promptText="Password">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="btnLogin" layoutX="228.0" layoutY="306.0" onAction="#loginClicked" prefHeight="64.0" prefWidth="186.0" style="-fx-background-color: #42f4b3;" text="Log In">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="552.0" prefWidth="495.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="lk.beempz.tf.controller.EditAndAddNewRateController">
+   <children>
+      <JFXDatePicker layoutX="105.0" layoutY="81.0" prefHeight="19.0" prefWidth="263.0" promptText="Month" />
+      <JFXTextField labelFloat="true" layoutX="105.0" layoutY="147.0" prefHeight="28.0" prefWidth="263.0" promptText="Grade A Tea Price" />
+      <JFXTextField labelFloat="true" layoutX="105.0" layoutY="224.0" prefHeight="28.0" prefWidth="263.0" promptText="Grade B Tea Price" />
+      <JFXTextField labelFloat="true" layoutX="105.0" layoutY="311.0" prefHeight="28.0" prefWidth="263.0" promptText="Travelling Fee" />
+      <JFXButton layoutX="227.0" layoutY="390.0" prefHeight="44.0" prefWidth="84.0" text="Add" />
+      <JFXButton layoutX="311.0" layoutY="390.0" prefHeight="44.0" prefWidth="84.0" text="Clear" />
+   </children>
+</AnchorPane>

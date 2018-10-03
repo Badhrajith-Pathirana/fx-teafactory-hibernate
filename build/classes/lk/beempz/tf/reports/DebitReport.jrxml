@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-06-29T14:01:50 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Bank_Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ce6c7a82-892b-4e5a-98e1-5d67c9e13ed5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="teafact"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="supid" class="java.lang.String"/>
+	<parameter name="fromdate" class="java.util.Date"/>
+	<parameter name="todate" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[select d.debitid,s.supplierno,p.purchase_id, p.purchase_date,p.akg, p.bkg,s.name,  d.amount
+from debit d , supplier s, purchase p
+where d.supplierid  = $P{supid}  and s.supplierno = d.supplierid and p.purchase_id = d.purchaseid and d.debitdate between  $P{fromdate} and $P{todate}]]>
+	</queryString>
+	<field name="debitid" class="java.lang.Integer"/>
+	<field name="supplierno" class="java.lang.Integer"/>
+	<field name="purchase_id" class="java.lang.Integer"/>
+	<field name="purchase_date" class="java.sql.Date"/>
+	<field name="akg" class="java.math.BigDecimal"/>
+	<field name="bkg" class="java.math.BigDecimal"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="amount" class="java.math.BigDecimal"/>
+	<variable name="total" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="210" y="0" width="150" height="50" uuid="f7cc5014-089c-43e5-bada-ab4004bd6de6"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Debit Details"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="87" splitType="Stretch">
+			<textField>
+				<reportElement x="370" y="10" width="100" height="25" uuid="c8b99861-3ffb-4f79-88f6-abf88bfb3dc3"/>
+				<textFieldExpression><![CDATA[$P{fromdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="35" width="106" height="30" uuid="a17dfdcc-396c-46f0-9a45-055d797dade5"/>
+				<textFieldExpression><![CDATA[$P{todate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="50" width="133" height="30" uuid="99243c11-8e1c-4f6a-9b1a-4b9e090bf260"/>
+				<textFieldExpression><![CDATA["Supplier Name "+$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="18" width="132" height="30" uuid="9634cb65-defd-4f2c-a2a6-ffe7e0e047e4"/>
+				<textFieldExpression><![CDATA["Supplier No "+$F{supplierno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="95" height="30" uuid="286f22ed-e120-4708-8f9a-3356362ca157"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[debitid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="92" height="30" uuid="ff420e0a-552c-4940-bbaf-7bb12c790fac"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[purchase_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="0" width="92" height="30" uuid="c5bc858a-cf00-4d56-9419-17b06a78a8cd"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[purchase_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="92" height="30" uuid="58bbfc01-df0c-4bac-a59c-a22d731d8941"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[akg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="92" height="30" uuid="23326f65-a751-449d-99c4-6a3d5383b0de"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[bkg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="0" width="92" height="30" uuid="171e2009-d9dd-469e-8267-e9619b92a154"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="73" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="7" width="95" height="30" uuid="08b5b043-1067-40db-81c2-f0abe60c5264"/>
+				<textFieldExpression><![CDATA[$F{debitid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="7" width="92" height="30" uuid="b80171e5-b0ee-457d-b947-e7e1f1d54eb8"/>
+				<textFieldExpression><![CDATA[$F{purchase_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="7" width="92" height="30" uuid="bbcc2cc9-7e4c-4b20-8eb4-6d6b98a95a2e"/>
+				<textFieldExpression><![CDATA[$F{purchase_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="7" width="92" height="30" uuid="53b7578e-49b2-4cff-826b-bec1dd1b7575"/>
+				<textFieldExpression><![CDATA[$F{akg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="7" width="92" height="30" uuid="47fb72ad-9d4e-4921-9266-30c2b210c76b"/>
+				<textFieldExpression><![CDATA[$F{bkg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="7" width="92" height="30" uuid="160d1642-7233-44bd-860a-0529ec2ea7ae"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="445" y="13" width="100" height="30" uuid="4dd87faf-a68f-4f60-b028-b754eb2c209c"/>
+				<textFieldExpression><![CDATA["Total Debit :"+$V{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

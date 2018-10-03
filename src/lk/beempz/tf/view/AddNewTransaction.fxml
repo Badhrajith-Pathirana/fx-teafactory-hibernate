@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="354.0" prefWidth="455.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="lk.beempz.tf.controller.AddNewTransactionController">
+   <children>
+      <JFXComboBox fx:id="cmbSupplier" labelFloat="true" layoutX="53.0" layoutY="62.0" onAction="#cmbChanged" prefHeight="25.0" prefWidth="138.0" promptText="Supplier ID" />
+      <JFXTextField fx:id="txtSupplier" labelFloat="true" layoutX="264.0" layoutY="62.0" prefHeight="25.0" prefWidth="138.0" promptText="Name" />
+      <JFXTextField fx:id="txtGradeA" labelFloat="true" layoutX="55.0" layoutY="135.0" prefHeight="25.0" prefWidth="138.0" promptText="A Grade Tea(Kg)" />
+      <JFXTextField fx:id="txtGradeB" labelFloat="true" layoutX="266.0" layoutY="135.0" promptText="B Grade Tea(Kg)" />
+      <JFXButton fx:id="btnAdd" layoutX="169.0" layoutY="253.0" onAction="#btnAdd_OnAction" prefHeight="48.0" prefWidth="115.0" style="-fx-background-color: lightgreen;" text="Add" />
+   </children>
+</AnchorPane>

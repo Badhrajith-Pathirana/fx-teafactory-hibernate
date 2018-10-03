@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.beempz.tf.controller.PurchasesFormController">
+   <children>
+      <TableView fx:id="tblTransaction" layoutX="70.0" layoutY="105.0" prefHeight="376.0" prefWidth="769.0">
+        <columns>
+          <TableColumn prefWidth="125.0" text="Purchase Date" />
+          <TableColumn prefWidth="131.0" text="Supplier ID" />
+            <TableColumn prefWidth="238.0" text="Supplier Name" />
+            <TableColumn prefWidth="129.0" text="A Kg" />
+            <TableColumn prefWidth="137.0" text="B Kg" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="560.0" layoutY="520.0" onAction="#btnAddOnAction" prefHeight="40.0" prefWidth="103.0" style="-fx-background-color: lightgreen;" text="Add" />
+      <JFXButton layoutX="736.0" layoutY="520.0" onAction="#btnRemoveOnAction" prefHeight="40.0" prefWidth="103.0" style="-fx-background-color: red;" text="Remove" />
+      <Label layoutX="70.0" layoutY="28.0" text="Purchases">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
